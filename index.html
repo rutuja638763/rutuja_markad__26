@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Space - Premium Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        body {
+            background-color: #ffffff;
+            color: #2D3748;
+            overflow-x: hidden;
+        }
+        a {
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .section-tag {
+            display: block;
+            text-align: center;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #5d6570;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #0c2ab4 0%, #039f76 100%);
+            color: white;
+            padding-bottom: 90px;
+            border-bottom-left-radius: 0px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 0;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 0.5px;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        nav a {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 14px;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: white;
+        }
+        .btn-download {
+            background-color: #00ffaa;
+            color: #0c2ab4 !important;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 700;
+        }
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 255, 170, 0.4);
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: center;
+            margin-top: 60px;
+        }
+        .hero-text h1 {
+            font-size: 52px;
+            color: #00ffa2;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+        .hero-text p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: rgba(215, 223, 224, 0.9);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+        .btn-outline {
+            display: inline-block;
+            border: 2px solid white;
+            color: white;
+            padding: 14px 32px;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        .btn-outline:hover {
+            background: white;
+            color: #0c2ab4;
+        }
+        .hero-img svg {
+            width: 100%;
+            height: auto;
+        }
+        .clients-section {
+            background-color: #a4b1b1;
+            padding: 50px 0;
+            border-bottom: 1px solid #edf2f7;
+            text-align: center;
+        }
+        .clients-title {
+            font-size: 15px;
+            color: #414242;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .logos-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .logos-flex span {
+            font-size: 20px;
+            font-weight: 800;
+            color: #cbd5e0;
+        }
+        .services-section {
+            padding: 100px 0;
+            background-color: #ffffff;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        .service-card {
+            text-align: center;
+            padding: 20px;
+        }
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 26px auto;
+            color: black;
+        }
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 15px;
+        }
+        .service-card p {
+            font-size: 14px;
+            color: #718096;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .learn-more {
+            color: #3182ce;
+            font-size: 17px;
+            font-weight: 600;
+        }
+        .learn-more:hover {
+            color: #187be6;
+        }
+        .pricing-section {
+            background-color: #0d0d3b;
+            color: white;
+            padding: 100px 0;
+        }
+        .pricing-header h2 {
+            font-size: 36px;
+            font-weight: 800;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+            line-height: 1.3;
+        }
+        .pricing-header h2 span {
+            color: #00ffa2;
+        }
+        .price-card {
+            background: white;
+            color: #2d3748;
+            padding: 45px 35px;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .plan-name {
+            font-size: 12px;
+            font-weight: 800;
+            color: #a0aec0;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .plan-price {
+            font-size: 40px;
+            font-weight: 800;
+            color: #1a202c;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .plan-price span {
+            font-size: 14px;
+            font-weight: 500;
+            color: #718096;
+        }
+        .plan-features {
+            list-style: none;
+            margin-bottom: 35px;
+        }
+        .plan-features li {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #4a5568;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 5px;
+        }
+        .btn-contact {
+            display: block;
+            text-align: center;
+            background-color: #1a202c;
+            color: white;
+            padding: 12px;
+            font-weight: 700;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+        .btn-contact:hover {
+            background-color: #2d3748;
+        }
+        .team-section {
+            padding: 100px 0;
+            background-color: #f7fafc;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .team-card {
+            text-align: center;
+        }
+        .team-img {
+            width: 100%;
+            max-width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .team-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+        .team-card p {
+            font-size: 14px;
+            color: #718096;
+        }
+        .open-source-section {
+            padding: 100px 0;
+            text-align: center;
+            background-color: #ffffff;
+        }
+        .open-source-section .flag-icon {
+            width: 65px;
+            height: 65px;
+            color: #cbd5e0;
+            margin: 0 auto 25px auto;
+        }
+        .open-source-section h2 {
+            font-size: 44px;
+            font-weight: 800;
+            color: #1a202c;
+            margin-bottom: 35px;
+            line-height: 1.2;
+        }
+        .btn-github {
+            display: inline-block;
+            border: 1px solid #cbd5e0;
+            color: #4a5568;
+            padding: 14px 32px;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+        .btn-github:hover {
+            background-color: #f7fafc;
+            color: #1a202c;
+            border-color: #a0aec0;
+        }
+        footer {
+            background-color: #030366;
+            color: white;
+            padding: 70px 0;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+        .footer-col h3 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #ffffff;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        .footer-col ul li a {
+            color: #a3a5e0;
+            font-size: 14px;
+        }
+        .footer-col ul li a:hover {
+            color: #ffffff;
+        }
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-text h1 {
+                font-size: 40px;
+            }
+            .hero-img {
+                max-width: 450px;
+                margin: 0 auto;
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .hero-section {
+                padding-bottom: 60px;
+            }
+            .pricing-header h2 {
+                font-size: 28px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+        }
+    </style>
+    <section class="hero-section">
+        <div class="container">
+            <header>
+                <div class="logo"> DEV SPACE</div>
+                <nav>
+                    <a href="#">What we do</a>
+                    <a href="#">How we work</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Our Team</a>
+                    <a href="#" class="btn-download">Download</a>
+                </nav>
+            </header>
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <h1>Design UI<br>App Development<br>Consultant Services</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a href="#" class="btn-outline">Start A Project Today</a>
+                </div>
+                <div class="hero-img">
+              <img src="hero.webp" alt="team illustration" width="500px" height="450px ">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="clients-section">
+        <div class="container">
+            <div class="clients-title">Trusted By The Best Clients</div>
+            <div class="logos-flex">
+                <span style="color: #4a6cf7;">algolia</span>
+                <span style="color: #9b51e0;">lapa</span>
+                <span style="color: #ff5a5f;">HUGO</span>
+                <span style="color: #2d3748;">codecademy</span>
+                <span style="color: #ff9900;">aws</span>
+                <span style="color: #6772e5;">stripe</span>
+            </div>
+        </div>
+    </section>
+    <section class="services-section">
+        <div class="container">
+            <span class="section-tag">What We Do</span>
+            <div class="grid-3">
+                <div class="service-card">
+             <svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                    <h3>Interface Design</h3>
+                    <p>Recepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <a href="#" class="learn-more">Learn more</a>
+                </div>
+                <div class="service-card">
+                    <svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                  <h3>Web Application</h3>
+                    <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
+                    <a href="#" class="learn-more">Learn more</a>
+                </div>
+                <div class="service-card">
+                    <svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                   <h3>Software Development</h3>
+                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+                    <a href="#" class="learn-more">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pricing-section">
+        <div class="container">
+            <span class="section-tag" style="color: #718096;">How We Work</span>
+            <div class="pricing-header">
+                <h2>We build <span>reliable infrastructure</span>, use comprehensive in-house tools.</h2>
+            </div>
+            <div class="grid-3">
+                <div class="price-card">
+                    <div>
+                        <div class="plan-name">PRO</div>
+                        <div class="plan-price">$2500 <span>/ month</span></div>
+                        <ul class="plan-features">
+                            <li><strong>10</strong> billable hours included per month.</li>
+                            <li>Billable hourly rate of $300 after the included 10 hours are utilized.</li>
+                            <li>24/7/365 on-call and 99.9% SLA.</li>
+                            <li>Communication via ticketing system and e-mail.</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn-contact">Contact Us</a>
+                </div>
+                <div class="price-card"> n
+                    <div>
+                        <div class="plan-name">PREMIUM</div>
+                        <div class="plan-price">$5000 <span>/ month</span></div>
+                        <ul class="plan-features">
+                            <li><strong>18</strong> billable hours included per month.</li>
+                            <li>Billable hourly rate of $300 after the included 10 hours are utilized.</li>
+                            <li>24/7/365 on-call and 99.9% SLA.</li>
+                            <li>Communication via ticketing system and e-mail.</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn-contact">Contact Us</a>
+                </div>
+                <div class="price-card">
+                    <div>
+                        <div class="plan-name">ENTERPRISE</div>
+                        <div class="plan-price">$15000 <span>/ month</span></div>
+                        <ul class="plan-features">
+                            <li><strong>10</strong> billable hours included per month.</li>
+                            <li>Billable hourly rate of $300 after the included 10 hours are utilized.</li>
+                            <li>24/7/365 on-call and 99.9% SLA.</li>
+                            <li>Communication via ticketing system and e-mail.</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn-contact">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="team-section">
+        <div class="container">
+            <span class="section-tag">Meet Our Team</span>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="OIP (16).webp" alt="John Doe" class="team-img">
+                    <h4>John Doe</h4>
+                    <p>DevOps</p>
+                </div>
+                <div class="team-card">
+                    <img src="istockphoto-2158706095-612x612.jpg" alt="Tinh Nguyen" class="team-img">
+                    <h4>Tinh Nguyen</h4>
+                    <p>Designer</p>
+                </div>
+                <div class="team-card">
+                    <img src="R (1).png" alt="Maria Oto" class="team-img">
+                    <h4>Maria Oto</h4>
+                    <p>Developer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="open-source-section">
+        <div class="container">
+            <span class="section-tag">We love Open Source</span>
+            <svg class="flag-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path></svg>
+          <h2>We're making<br>Open Source Software</h2>
+            <a href="#" class="btn-github"> Follow us on Github <br> @rutujamarkad_0126</a>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">DevOps</a></li>
+                        <li><a href="#">Development</a></li>
+                        <li><a href="#">Consultant</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Clients</h3>
+                    <ul>
+                        <li><a href="#">Lapa Ninja</a></li>
+                        <li><a href="#">Noty IM</a></li>
+                        <li><a href="#">Yeo Space</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><a href="#">tinh@lapa.ninja</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Github</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Copyright</h3>
+                    <ul>
+                        <li><a href="#">Free Streamline Icons</a></li>
+                        <li><a href="#">Buy Illustration Pack by Nimart1</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
